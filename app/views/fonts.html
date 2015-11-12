@@ -1,0 +1,12 @@
+<div class="col-md-10 col-md-offset-1">
+    <div class="row">
+        <div class="col-md-6 pull-left">
+            <h1>Fonts</h1>
+            <div ng-repeat="font in fonts | limitTo:5" class="well well-lg">
+                <div ng-repeat="(key, value) in font">
+                    <p> {{key}}: {{ value }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
