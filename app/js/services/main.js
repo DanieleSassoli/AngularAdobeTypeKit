@@ -43,11 +43,17 @@ angular.module('ngTypeKit').factory('mainService', ['$http', function ($http) {
         updateKit: function(kitId, options, cb){
             executePostRequest('kits/' + kitId, options, cb);
         },
-        updateFontFamily: function(kitId, familyId, options, cb){
-            executePostRequest('kits/' + kitId + 'families/' + familyId, options, cb);
+        deleteKit: function(kitId, cb){
+            executeDeleteRquest('kits/' + kitId, cb);
         },
         getKitFamily: function (kitId, familyId, cb){
-            executeGetRequest('kits/' + kitId + 'families/' + familyId, cb);
+            executeGetRequest('kits/' + kitId + '/families/' + familyId, cb);
+        },
+        updateKitFamily: function(kitId, familyId, options, cb){
+            executePostRequest('kits/' + kitId + '/families/' + familyId, options, cb);
+        },
+        deleteKitFamily: function(kitId, familyId, cb){
+            executeDeleteRquest('kits/' + kitId + '/families/' + familyId, cb);
         },
         publishKit: function(kitId, cb){
             executePostRequest(kitId + 'publish', cb);
