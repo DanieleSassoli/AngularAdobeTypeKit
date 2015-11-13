@@ -1,0 +1,44 @@
+<div class="col-md-10 col-md-offset-1">
+    <div class="row">
+        <button class="btn btn-danger" ng-click="getKits(); showForm = 'getKits'">
+            Get Kits
+        </button>
+        &nbsp;
+        <button class="btn btn-danger" ng-click="getKits(); showForm = 'getKit'">
+            Get Kit
+        </button>
+        &nbsp;
+        <button class="btn btn-danger" ng-click="getKits(); showForm = 'updateKit'">
+            Update Kit
+        </button>
+        &nbsp;
+        <button class="btn btn-danger" ng-click="getKits(); showForm = 'deleteKit'">
+            Delete Kit
+        </button>
+    </div>
+    <div class="row">
+        <div class="alert alert-danger" role="alert" ng-show="showAlert">{{errorMsg}}</div>
+    </div>
+    <div ng-switch="showForm">
+        <div ng-switch-when="getKit">
+
+        </div>
+        <div ng-switch-when="updateKit">
+
+        </div>
+        <div ng-switch-when="deleteKit">
+
+        </div>
+        <div ng-switch-default>
+            <div class="row">
+                <h1>Kits</h1>
+
+                <div ng-repeat="kit in kits | limitTo:5" class="well well-lg">
+                    <div ng-repeat="(key, value) in kit">
+                        <p> {{key}}: {{ value }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
