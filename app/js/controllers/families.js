@@ -10,7 +10,7 @@ angular.module('ngTypeKit').controller('families', ['$scope', 'ngTypeKitService'
     $scope.getFamily = function () {
         ngTypeKitService.getFamily($scope.family.familyId, function (err, data) {
             if (err) manageError(err);
-            else $scope.family = data;
+            else $scope.familyData = data;
         });
     };
     $scope.getFamilyVariation = function () {
