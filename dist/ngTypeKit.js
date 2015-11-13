@@ -14,7 +14,7 @@ angular.module('ngTypeKit', []).factory('ngTypeKitService', ['$http', function (
     }
 
     function executePostRequest(endPoint, data, cb) {
-        $http.post(baseUrl + endPoint + tokenParam, data, params).success(function (res) {
+        $http.post(baseUrl + endPoint + tokenParam, data).success(function (res) {
             cb(null, res.data);
         }).error(function (err) {
             cb(err);
@@ -22,7 +22,7 @@ angular.module('ngTypeKit', []).factory('ngTypeKitService', ['$http', function (
     }
 
     function executeDeleteRquest(endPoint, cb) {
-        $http.delete(baseUrl + endPoint + tokenParam, params).success(function (res) {
+        $http.delete(baseUrl + endPoint + tokenParam).success(function (res) {
             cb(null, res.data);
         }).error(function (err) {
             cb(err);
