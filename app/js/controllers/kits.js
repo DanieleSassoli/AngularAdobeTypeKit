@@ -2,6 +2,7 @@
 
 angular.module('ngTypeKit').controller('kits', ['$scope', 'ngTypeKitService', function($scope, ngTypeKitService){
     $scope.showAlert = false;
+    $scope.kit = {};
     $scope.getKits = function(){
         ngTypeKitService.getKits(function(err, data){
             if(err){

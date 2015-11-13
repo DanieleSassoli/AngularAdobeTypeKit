@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="col-md-10 col-md-offset-1">
+    <ul class="nav nav-tabs" id="familyTabs">
+        <li role="presentation" class="active"><a href="#index">Show Family</a></li>
+        <li role="presentation" ><a href="#show">Show Family Variation</a></li>
+    </ul>
+    <div class="row">
+        <div class="alert alert-danger" role="alert" ng-show="showAlert">{{errorMsg}}</div>
+    </div>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="index">
+            <div ng-include="'views/families/show.html'" ng-controller="families"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="show">
+            <div ng-include="'views/families/showVariation.html'" ng-controller="families"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#familyTabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>

@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="col-md-10 col-md-offset-1">
+    <ul class="nav nav-tabs" id="libraryTabs">
+        <li role="presentation" class="active"><a href="#getLibraries">Libraries</a></li>
+        <li role="presentation" ><a href="#getLibrary">Show Library</a></li>
+    </ul>
+    <div class="row">
+        <div class="alert alert-danger" role="alert" ng-show="showAlert">{{errorMsg}}</div>
+    </div>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="getLibraries">
+            <div ng-include="'views/libraries/index.html'" ng-controller="libraries"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="getLibrary">
+            <div ng-include="'views/libraries/show.html'" ng-controller="libraries"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#libraryTabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>

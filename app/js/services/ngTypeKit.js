@@ -5,25 +5,25 @@ angular.module('ngTypeKit').factory('ngTypeKitService', ['$http', function ($htt
     var tokenParam = '?token=15a9a8fd8623e13b0e2119d88b179b20232e483e';
     function executeGetRequest(endPoint, cb) {
         console.log(endPoint);
-        $http.get(baseUrl + endPoint + tokenParam).then(function (data) {
-            if (data['errors'] !== undefined) cb("error", JSON.stringify(data['errors']));
-            else cb(null, data);
+        $http.get(baseUrl + endPoint + tokenParam).then(function (res) {
+            if (res['errors'] !== undefined) cb("error", JSON.stringify(res['errors']));
+            else cb(null, res.data);
         }, function (err) {
             cb(err);
         });
     }
 
     function executePostRequest(endPoint, data, cb) {
-        $http.post(baseUrl + endPoint + tokenParam, data, params).success(function (data) {
-            cb(null, data);
+        $http.post(baseUrl + endPoint + tokenParam, data, params).success(function (res) {
+            cb(null, res.data);
         }).error(function (err) {
             cb(err);
         });
     }
 
     function executeDeleteRquest(endPoint, cb) {
-        $http.delete(baseUrl + endPoint + tokenParam, params).success(function (data) {
-            cb(null, data);
+        $http.delete(baseUrl + endPoint + tokenParam, params).success(function (res) {
+            cb(null, res.data);
         }).error(function (err) {
             cb(err);
         });

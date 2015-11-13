@@ -1,44 +1,29 @@
 <div class="col-md-10 col-md-offset-1">
-    <div class="row">
-        <button class="btn btn-danger" ng-click="getKits(); showForm = 'getKits'">
-            Get Kits
-        </button>
-        &nbsp;
-        <button class="btn btn-danger" ng-click="getKits(); showForm = 'getKit'">
-            Get Kit
-        </button>
-        &nbsp;
-        <button class="btn btn-danger" ng-click="getKits(); showForm = 'updateKit'">
-            Update Kit
-        </button>
-        &nbsp;
-        <button class="btn btn-danger" ng-click="getKits(); showForm = 'deleteKit'">
-            Delete Kit
-        </button>
-    </div>
-    <div class="row">
-        <div class="alert alert-danger" role="alert" ng-show="showAlert">{{errorMsg}}</div>
-    </div>
-    <div ng-switch="showForm">
-        <div ng-switch-when="getKit">
+    <ul class="nav nav-tabs" id="kitTabs">
+        <li role="presentation" class="active"><a href="#getKits">Get Kits</a></li>
+        <li role="presentation" ><a href="#getKit">Get Kit</a></li>
+        <li role="presentation" ><a href="#update">Update Kit</a></li>
+        <li role="presentation" ><a href="#delete">Delete Kit</a></li>
+    </ul>
 
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="getKits">
+            <div ng-include="'views/kits/index.html'" ng-controller="kits"></div>
         </div>
-        <div ng-switch-when="updateKit">
-
+        <div role="tabpanel" class="tab-pane fade" id="getKit">
+            <div ng-include="'views/kits/show.html'" ng-controller="kits"></div>
         </div>
-        <div ng-switch-when="deleteKit">
-
+        <div role="tabpanel" class="tab-pane fade" id="update">
+            <div ng-include="'views/kits/update.html'" ng-controller="kits"></div>
         </div>
-        <div ng-switch-default>
-            <div class="row">
-                <h1>Kits</h1>
-
-                <div ng-repeat="kit in kits | limitTo:5" class="well well-lg">
-                    <div ng-repeat="(key, value) in kit">
-                        <p> {{key}}: {{ value }} </p>
-                    </div>
-                </div>
-            </div>
+        <div role="tabpanel" class="tab-pane fade" id="delete">
+            <div ng-include="'views/kits/delete.html'" ng-controller="kits"></div>
         </div>
     </div>
 </div>
+<script>
+    $('#kitTabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>
