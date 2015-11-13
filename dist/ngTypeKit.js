@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('ngTypeKit').factory('ngTypeKitService', ['$http', function ($http) {
+// Declare app level module which depends on views, and components
+angular.module('ngTypeKit', []).factory('ngTypeKitService', ['$http', function ($http) {
     var baseUrl = 'http://cors.io/?u=https://typekit.com/api/v1/json/';
     var tokenParam = '?token=15a9a8fd8623e13b0e2119d88b179b20232e483e';
     function executeGetRequest(endPoint, cb) {
-        console.log(endPoint);
         $http.get(baseUrl + endPoint + tokenParam).then(function (res) {
             if (res['errors'] !== undefined) cb("error", JSON.stringify(res['errors']));
             else cb(null, res.data);

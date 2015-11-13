@@ -1,12 +1,31 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "ngTypeKit",
+  "description": "Project to create an easy to use Adobe TypeKit Angular service",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/DanieleSassoli/AngularAdobeTypeKit",
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "angular": "~1.4.7",
     "bootstrap": "~3.3.5"
-  }
+  },
+  "authors": [
+    "DanieleSassoli <danielesassoli@gmail.com>"
+  ],
+  "main": "dist/ngTypeKit.js",
+  "moduleType": [],
+  "keywords": [
+    "AngularJS",
+    "Adobe",
+    "TypeKit",
+    "Fonts",
+    "Javascript"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }

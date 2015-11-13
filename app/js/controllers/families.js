@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ngTypeKit').controller('families', ['$scope', 'ngTypeKitService', function ($scope, ngTypeKitService) {
+exampleApp.controller('families', ['$scope', 'ngTypeKitService', function ($scope, ngTypeKitService) {
     $scope.family = {};
     function manageError(err) {
         $scope.errorMsg = err;

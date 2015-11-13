@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ngTypeKit').controller('kits', ['$scope', 'ngTypeKitService', function ($scope, ngTypeKitService) {
+exampleApp.controller('kits', ['$scope', 'ngTypeKitService', function ($scope, ngTypeKitService) {
     $scope.showAlert = false;
     function manageError(err) {
         $scope.errorMsg = err;
