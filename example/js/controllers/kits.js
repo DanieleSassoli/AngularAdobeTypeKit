@@ -72,7 +72,22 @@ exampleApp.controller('kits', ['$scope', 'ngTypeKitService', function ($scope, n
         });
     };
     $scope.updateOrCreateFontFamily = function () {
-        ngTypeKitService.updateKitFamily($scope.kitFamily.updateKitId, $scope.kitFamily.updateFontFamilyId, function (err, data) {
+        var options = {
+            "family": {
+                "id": "gkmg",
+                "name": "Droid Sans",
+                "css_names": [
+                    "droid-sans-1",
+                    "droid-sans-2"
+                ],
+                "css_stack": "\"droid-sans-1\",\"droid-sans-2\",sans-serif",
+                "variations": [
+                    "n4"
+                ],
+                "subset": "default"
+            }
+        }
+        ngTypeKitService.updateKitFamily($scope.kitFamily.updateKitId, $scope.kitFamily.updateFontFamilyId, options, function (err, data) {
             if (err) manageError(err);
             else $scope.fontFamily = data;
         });
