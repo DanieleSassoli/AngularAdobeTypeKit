@@ -91,7 +91,7 @@ exampleApp.controller('kits', ['$scope', 'ngTypeKitService', function ($scope, n
         });
     };
     $scope.publishedKit = function () {
-        ngTypeKitService.publishedKit($scope.kit.publishedKitId, function(err, data){
+        ngTypeKitService.publishedKit($scope.kit.publishedKitId, function (err, data) {
             if (err)manageError(err);
             else $scope.publishedKit = data;
         });
