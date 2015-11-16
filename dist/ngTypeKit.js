@@ -14,9 +14,9 @@ angular.module('ngTypeKit', []).factory('ngTypeKitService', ['$http', function (
     }
 
     function executePostRequest(endPoint, data, cb) {
-        $http.post(baseUrl + endPoint + tokenParam, data).success(function (res) {
+        $http.post(baseUrl + endPoint + tokenParam, data).then(function (res) {
             cb(null, res.data);
-        }).error(function (err) {
+        }, function (err) {
             cb(err);
         });
     }
