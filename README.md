@@ -4,7 +4,7 @@ This module wants to provide an easy way to work with the Adobe TypeKit API's. A
 and return the response provided by Adobe API's.
  
 ##Installation
- You can easily install the package view Bower:
+ You can easily install the package via Bower:
   
  ``` bower install ngTypeKit ```
  
