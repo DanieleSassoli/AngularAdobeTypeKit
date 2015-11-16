@@ -1,4 +1,4 @@
-# AngularAdobeTypeKit
+# Angular Adobe Typekit
 
 This module wants to provide an easy way to work with the Adobe TypeKit API's. All it does is call the appropriate endpoints
 and return the response provided by Adobe API's.
