@@ -86,7 +86,7 @@ exampleApp.controller('kits', ['$scope', 'ngTypeKitService', function ($scope, n
                 ],
                 "subset": "default"
             }
-        }
+        };
         ngTypeKitService.updateKitFamily($scope.kitFamily.updateKitId, $scope.kitFamily.updateFontFamilyId, options, function (err, data) {
             if (err) manageError(err);
             else $scope.fontFamily = data;
