@@ -1,0 +1,25 @@
+<div class="col-md-10 col-md-offset-1">
+    <ul class="nav nav-tabs" id="kitFamiliesTabs">
+        <li role="presentation" class="active"><a href="#createOrUpdate">Create or Update</a></li>
+        <li role="presentation" ><a href="#showFamily">Show</a></li>
+        <li role="presentation" ><a href="#deleteFamily">Delete</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="createOrUpdate">
+            <div ng-include="'views/kits/families/updateOrCreate.html'" ng-controller="kits"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="showFamily">
+            <div ng-include="'views/kits/families/show.html'" ng-controller="kits"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="deleteFamily">
+            <div ng-include="'views/kits/families/delete.html'" ng-controller="kits"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#kitFamiliesTabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>

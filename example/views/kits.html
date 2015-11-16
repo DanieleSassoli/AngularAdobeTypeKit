@@ -1,0 +1,37 @@
+<div class="col-md-10 col-md-offset-1">
+    <ul class="nav nav-tabs" id="kitTabs">
+        <li role="presentation" class="active"><a href="#createKits">Create Kit</a></li>
+        <li role="presentation" ><a href="#getKits">Get Kits</a></li>
+        <li role="presentation" ><a href="#getKit">Get Kit</a></li>
+        <li role="presentation" ><a href="#update">Update Kit</a></li>
+        <li role="presentation" ><a href="#delete">Delete Kit</a></li>
+        <li role="presentation" ><a href="#kitFamilies">Families</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="createKits">
+            <div ng-include="'views/kits/create.html'" ng-controller="kits"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="getKits">
+            <div ng-include="'views/kits/index.html'" ng-controller="kits"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="getKit">
+            <div ng-include="'views/kits/show.html'" ng-controller="kits"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="update">
+            <div ng-include="'views/kits/update.html'" ng-controller="kits"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="delete">
+            <div ng-include="'views/kits/delete.html'" ng-controller="kits"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="kitFamilies">
+            <div ng-include="'views/kits/families.html'" ng-controller="families"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#kitTabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>

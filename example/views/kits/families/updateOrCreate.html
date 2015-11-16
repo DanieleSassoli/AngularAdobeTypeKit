@@ -1,0 +1,28 @@
+<form class="form-horizontal">
+    <div class="row">
+        <div class="form-group">
+            <label for="kitId" class="col-sm-2 control-label">
+                Kit Id
+            </label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="kitId" placeholder="Kit Id" ng-model="kitFamily.updateKitId">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="fontFamilyId" class="col-sm-2 control-label">
+                Font Family Id
+            </label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="fontFamilyId" placeholder="Font Family Id" ng-model="kitFamily.updateFontFamilyId">
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-danger" ng-click="updateOrCreateFontFamily();">
+        Generate Or Update fontFamily (with Fixed Data)
+    </button>
+</form>
+<p>{{createdKit}}</p>

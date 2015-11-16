@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="form-group">
+        <label for="getKitId" class="col-sm-2 control-label">
+            <button class="btn btn-danger" ng-click="getKit();" ng-disabled="!kit.getKitId">
+                Get Kit
+            </button>
+        </label>
+
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="getKitId" placeholder="Kit Id" ng-model="kit.getKitId">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div ng-show="kitData" class="well">
+        <p>{{kitData}}</p>
+    </div>
+</div>

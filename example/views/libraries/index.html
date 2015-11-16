@@ -1,0 +1,6 @@
+<button class="btn btn-danger" ng-click="getLibraries();">
+    Get Libraries
+</button>
+<div ng-repeat="library in libraries | limitTo:5" class="well well-lg">
+    <p> {{ library }} </p>
+</div>
